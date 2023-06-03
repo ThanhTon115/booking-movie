@@ -7,6 +7,8 @@ import { github } from "../assets";
 import { SectionWrapper } from "../HOC";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { defaultVariants, defaultTiltOptions } from "../components/XCard";
+import DefaultPage from "../modules/default/DefaultPage";
 
 const ProjectCard = ({
   index,
@@ -17,13 +19,10 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
+    //variants={fadeIn("up", "spring", index * 0.5, 0.75)}
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
+        option={defaultTiltOptions}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
@@ -70,6 +69,7 @@ const ProjectCard = ({
 const Works = () => {
   return (
     <>
+      <DefaultPage />
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
