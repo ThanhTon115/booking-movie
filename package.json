@@ -9,16 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.1.4",
     "@emailjs/browser": "^3.11.0",
     "@react-three/drei": "^9.64.0",
     "@react-three/fiber": "^8.12.0",
+    "antd": "^5.5.2",
     "framer-motion": "^10.11.2",
     "maath": "^0.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0",
+    "react-router-dom": "^6.11.2",
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
+    "sass": "^1.62.1",
     "three": "^0.151.3"
   },
   "devDependencies": {

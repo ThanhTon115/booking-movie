@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { logo, menu } from "../../assets";
+import { navLinks } from "../../constants";
+import { styles } from "../../styles";
 
-import { styles } from "../styles";
-import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
-
-const Navbar = () => {
+const Header = () => {
+  const navigate = useNavigate();
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
+      } w-full flex items-center py-5 fixed top-0 z-20 transition-change ${
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
@@ -44,8 +44,7 @@ const Navbar = () => {
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            Adrian &nbsp;
-            <span className="sm:block hidden"> | JavaScript Mastery</span>
+            <span className="sm:block hidden"> Booking Movie Ticket</span>
           </p>
         </Link>
 
@@ -58,7 +57,13 @@ const Navbar = () => {
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a
+                onClick={() => {
+                  navigate(`/${nav.path}`);
+                }}
+              >
+                {nav.title}
+              </a>
             </li>
           ))}
         </ul>
@@ -99,4 +104,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
