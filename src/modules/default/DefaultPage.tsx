@@ -1,8 +1,8 @@
-import React from "react";
-import XCard from "../../components/XCard";
+import React from 'react'
+import XCard from '../../components/XCard'
 
-const efaultPage = () => {
-  return <XCard></XCard>;
-};
+const DefaultPage = () => {
+  return <XCard></XCard>
+}
 
-export default efaultPage;
+export default DefaultPage
