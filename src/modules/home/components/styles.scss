@@ -1,0 +1,35 @@
+.trailer-btn {
+  &--text {
+    width: 0;
+    opacity: 0;
+    // transition: all 0.5s linear;
+  }
+  &:hover {
+    .trailer-btn--text {
+      width: fit-content;
+      opacity: 1;
+      // transition: all 0.5s linear;
+    }
+  }
+}
+
+.showing-card {
+  &__infor {
+    display: none;
+    background: linear-gradient(135deg, black, #8c8c8c2a, black);
+  }
+  &:hover {
+    .showing-card__infor {
+      display: flex;
+      height: 100%;
+    }
+  }
+}
+
+.highlight-card {
+  &.gradient-backgorund {
+    background: linear-gradient(to left, transparent, transparent, rgb(5 8 22) 100%),
+      linear-gradient(to right, transparent, transparent, rgb(5 8 22) 100%),
+      linear-gradient(to bottom, transparent, rgb(5 8 22) 100%) !important;
+  }
+}

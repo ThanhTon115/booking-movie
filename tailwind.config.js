@@ -12,6 +12,12 @@ module.exports = {
         "black-200": "#090325",
         "white-100": "#f3f3f3",
       },
+      margin: {
+        sm: "4px",
+        md: "8px",
+        lg: "16px",
+        xl: "24px",
+      },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
       },
@@ -20,8 +26,10 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/public/img/poster-background.jpg')",
+        "gradient-horizontal": "linear-gradient(90deg, #c25a5a, #e510e3)",
       },
     },
   },
+  important: true,
   plugins: [],
 };
