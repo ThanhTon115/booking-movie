@@ -1,4 +1,4 @@
-import { Address } from '../modules/geo/types'
+import { Address } from '../../modules/geo/types'
 
 const alphaDigits = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
