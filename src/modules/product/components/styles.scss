@@ -1,0 +1,30 @@
+.showing-card {
+  &__infor {
+    transition: all 0.3s linear;
+    display: flex;
+    background: linear-gradient(to Bottom, transparent, black);
+    opacity: 0;
+  }
+  &__duration,
+  &__name {
+    opacity: 0;
+    height: 0;
+    position: relative;
+    z-index: 3;
+  }
+  &:hover {
+    .showing-card__infor {
+      display: flex;
+      opacity: 1;
+      transition: all 0.3s linear;
+    }
+    .showing-card {
+      &__name,
+      &__duration {
+        height: fit-content;
+        opacity: 1;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+}

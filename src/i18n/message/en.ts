@@ -1,4 +1,6 @@
+import { enMessages as homeEn } from '../../modules/home/i18n/en';
 const enMessages = {
+  ...homeEn,
   label: {
     app_title: 'BMT',
     promotions: 'Promotions',
@@ -21,11 +23,14 @@ const enMessages = {
     FAQ: 'FAQ',
     email: 'Email',
     working_hour: 'Working hour',
+    recruitment: 'Recruitment',
+    customer_service: 'Customer service',
+    view_all: 'View all',
     header: {
       about: 'Abouts',
       cinemas: 'Cinemas',
       contact: 'Contacts'
     }
   }
-}
-export default enMessages
+};
+export default enMessages;

@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { logo, menu } from '../../../assets'
-import { navLinks } from '../../../constants'
-import { styles } from '../../../styles'
-import { useTranslation } from 'react-i18next'
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { logo, menu } from '../../../assets';
+import { navLinks } from '../../../constants';
+import { styles } from '../../../styles';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
-  const { t } = useTranslation()
-  const navigate = useNavigate()
-  const [active, setActive] = useState('')
-  const [toggle, setToggle] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [active, setActive] = useState('');
+  const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY
+      const scrollTop = window.scrollY;
       if (scrollTop > 100) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 transition-change ${
-        scrolled ? 'bg-primary' : 'bg-transparent'
+        scrolled ? 'bg-primary' : 'gradient-backgorund--top'
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -38,8 +38,8 @@ const Header = () => {
           to='/'
           className='flex items-center gap-2'
           onClick={() => {
-            setActive('')
-            window.scrollTo(0, 0)
+            setActive('');
+            window.scrollTo(0, 0);
           }}
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
@@ -52,14 +52,14 @@ const Header = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
+              className={` ${
                 active === nav.id ? 'text-white' : 'text-secondary'
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              } hover:text-white text-[18px] font-bold cursor-pointer`}
               onClick={() => setActive(nav.id)}
             >
               <a
                 onClick={() => {
-                  navigate(`/${nav.path}`)
+                  navigate(`/${nav.path}`);
                 }}
               >
                 {t(`label.header.${nav.id}`)}
@@ -89,8 +89,8 @@ const Header = () => {
                     active === nav.id ? 'text-white' : 'text-secondary'
                   }`}
                   onClick={() => {
-                    setToggle(!toggle)
-                    setActive(nav.id)
+                    setToggle(!toggle);
+                    setActive(nav.id);
                   }}
                 >
                   <a href={`#${nav.id}`}>{t(`label.header.${nav.id}`)}</a>
@@ -101,7 +101,7 @@ const Header = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
