@@ -1,4 +1,6 @@
+import { viMessages as homeVi } from '../../modules/home/i18n/vi';
 const viMessages = {
+  ...homeVi,
   label: {
     app_title: 'BMT',
     promotions: 'Ưu đãi',
@@ -21,11 +23,14 @@ const viMessages = {
     FAQ: 'FAQ',
     email: 'Email',
     working_hour: 'Giờ làm việc',
+    recruitment: 'Tuyển dụng',
+    customer_service: 'Chăm sóc khách hàng',
+    view_all: "Xem tất cả",
     header: {
       about: 'Giới thiệu',
       cinemas: 'Rạp',
       contact: 'Liên hệ'
     }
   }
-}
-export default viMessages
+};
+export default viMessages;

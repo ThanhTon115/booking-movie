@@ -1,2 +1,35 @@
 @import './variables';
 @import './utilities';
+
+@font-face {
+  font-family: $--font-family-title;
+  src: url('./css/fonts/AlfaSlabOne-Regular.ttf');
+}
+
+.gradient-backgorund {
+  &--horizental {
+    background: linear-gradient(90deg, #050816, #050816c8, #050816c8, #050816);
+  }
+  &--vertical {
+    background: linear-gradient(180deg, black, #7a7a7a0a, #050816c8, #050816);
+  }
+  &--left {
+    background: linear-gradient(to left, #050816c8, #050816);
+  }
+  &--right {
+    background: linear-gradient(to right, #050816c8, #050816);
+  }
+  &--top {
+    background: linear-gradient(to top, transparent, #050816);
+  }
+  &--bottom {
+    background: linear-gradient(to bottom, transparent, #050816);
+  }
+  &--all {
+    background: radial-gradient(closest-side, transparent, #050816a8), linear-gradient(to bottom, transparent, #050816);
+  }
+}
+
+.font-title {
+  font-family: $--font-family-title;
+}

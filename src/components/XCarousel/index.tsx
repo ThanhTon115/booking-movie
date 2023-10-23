@@ -1,7 +1,7 @@
-import { Carousel, CarouselProps } from 'antd'
+import { Carousel } from 'antd'
 import './styles.scss'
 import React, { forwardRef, useRef } from 'react'
-import { CarouselRef } from 'antd/es/carousel'
+import { CarouselProps, CarouselRef } from 'antd/es/carousel'
 
 export interface XCarouselProps extends CarouselProps {}
 
