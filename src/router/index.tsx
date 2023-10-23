@@ -9,6 +9,6 @@ const RouteList = () => {
         <Route path={r.path} element={r.component()} key={index} />
       ))}
     </Routes>
-  );
-};
-export default RouteList;
+  )
+}
+export default RouteList

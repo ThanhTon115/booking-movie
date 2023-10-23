@@ -19,6 +19,12 @@ module.exports = {
         lg: '16px',
         xl: '24px'
       },
+      margin: {
+        sm: "4px",
+        md: "8px",
+        lg: "16px",
+        xl: "24px",
+      },
       boxShadow: {
         card: '0px 35px 120px -15px #211e35'
       },
