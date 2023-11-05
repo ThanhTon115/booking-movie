@@ -23,14 +23,14 @@ const EventCard = (props: EventCardProps) => {
       mouseTransition={false}
       className={props.className}
       childrent={
-        <div className='showing-card relative h-max w-[380px] bg-primary-50 rounded-[6px]'>
+        <div className='showing-card relative h-max w-[380px] max-md:w-[260px] bg-primary-50 rounded-[6px]'>
           <img
             src={props.value?.bannerUrl || ''}
             className='object-cover w-full rounded-t-[6px] sm:min-w-[200px]
-             h-[280px] sm:h-[200px] thumbnail-image'
+             h-[280px] max-md:h-[200px] thumbnail-image'
           />
           <div className='px-4'>
-            <p className='text-white py-4 uppercase'>{props.value?.title[selectedLocale]}</p>
+            <p className='text-white py-4 uppercase truncate'>{props.value?.title[selectedLocale]}</p>
             <hr />
             <p className='text-white py-4 truncate'>
               {props.value?.shortDescription[selectedLocale]}

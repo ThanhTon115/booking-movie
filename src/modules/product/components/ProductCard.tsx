@@ -4,6 +4,8 @@ import './styles.scss';
 import XCard from '../../../components/XCard';
 import { Movie } from '../../../interfaces';
 import { fadeIn } from '../../../shared/utils/motion';
+import { useNavigate } from 'react-router';
+import { ROUTE_PRODUCT_DETAIL } from '../types';
 
 export type ProductCardProps = {
   childrent?: React.ReactElement;
@@ -12,6 +14,7 @@ export type ProductCardProps = {
   className?: string;
 };
 const ProductCard = (props: ProductCardProps) => {
+  const navigate = useNavigate();
   return (
     <XCard
       variants={fadeIn('up', 'spring', 2 * 0.5, 0.75)}
@@ -27,7 +30,16 @@ const ProductCard = (props: ProductCardProps) => {
           <div className='rounded-[4px] showing-card__infor h-[400px] sm:min-h-[250px] w-[100%] absolute top-0 p-4 justify-end flex flex-col'>
             {props.inComing && (
               <div className='flex flex-row justify-between items-end mt-2 w-full'>
-                <button className='bg-tertiary py-[8px] px-[16px] rounded-[20px] outline-none w-fit text-white font-small shadow-lg hover:shadow-gray-500/50'>
+                <button
+                  className='bg-tertiary py-[8px] px-[16px] rounded-[20px] outline-none w-fit text-white font-small shadow-lg hover:shadow-gray-500/50'
+                  onClick={() =>
+                    navigate(ROUTE_PRODUCT_DETAIL, {
+                      state: {
+                        id: 'hel hoaaaaaalo'
+                      }
+                    })
+                  }
+                >
                   Get Ticket
                 </button>
                 <div className='flex items-cetner gap-2 pb-2'>
