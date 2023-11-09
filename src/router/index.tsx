@@ -20,10 +20,22 @@ const RouteList = () => {
       <Layout childrent={<Page />} />
     );
   };
+  const childrentRender = (r: RouteType) => {
+    return (
+      r.children?.length &&
+      r.children?.map((r: RouteType, ind) => (
+        <Route path={r.path} element={getPage(r, ind)}>
+          {childrentRender(r)}
+        </Route>
+      ))
+    );
+  };
   return (
     <Routes>
       {routeList.map((r, index) => (
-        <Route path={r.path} element={getPage(r, index)} key={index}></Route>
+        <Route path={r.path} element={getPage(r, index)} key={index}>
+          {childrentRender(r)}
+        </Route>
       ))}
       <Route element={<NotFound />} />
     </Routes>

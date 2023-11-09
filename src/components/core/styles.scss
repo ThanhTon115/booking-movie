@@ -1,1 +1,13 @@
+.x-switch__option {
+  &__label {
+    transition: all linear 0.3s;
 
+    &:hover {
+      font-size: 24px;
+      transition: all linear 0.3s;
+    }
+    &.active {
+      color: #31d7a9;
+    }
+  }
+}

@@ -14,7 +14,7 @@ const HighlightProduct = (props: PropType) => {
       style={{ backgroundImage: `url(${modelValue.bannerUrl})` }}
     >
       <div
-        className={`pt-36 flex lg:flex-row md:flex-row sm:flex-row flex-col  items-start sm:justify-between justify-start gap-5 px-[15vw] min-h-[60vh] flex-nowrap gradient-backgorund--bottom`}
+        className={`flex items-end sm:flex-row max-sm:pt-36 max-sm:items-start flex-col sm:justify-between justify-start gap-5 px-[10vw] min-h-[60vh] flex-nowrap gradient-backgorund--bottom mb-8`}
       >
         <div className='text-left sm:max-w-[40vw] max-w-[70vw]'>
           <h1 className={`${styles.heroHeadText} text-white`}>{modelValue?.name || '--'}</h1>

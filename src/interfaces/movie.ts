@@ -15,4 +15,5 @@ export interface Movie extends MetaData {
   publishedAt?: Date;
   premiereAt?: Date;
   bannerUrl?: string;
+  slug: string;
 }

@@ -14,7 +14,7 @@ export type HighlightsType = IntrinsicAttributes & {
 const Highlights = (props: HighlightsType) => {
   const { modelValue: highlights } = props;
   return (
-    <XCarousel autoplay className={`mx-auto ${props.className}`}>
+    <XCarousel className={`mx-auto ${props.className}`}>
       {highlights?.map((e, index) => <HighlightProduct modelValue={e} key={index} />)}
     </XCarousel>
   );

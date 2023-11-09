@@ -5,7 +5,7 @@ import XCard from '../../../components/XCard';
 import { Movie } from '../../../interfaces';
 import { fadeIn } from '../../../shared/utils/motion';
 import { useNavigate } from 'react-router';
-import { ROUTE_PRODUCT_DETAIL } from '../types';
+import { ROUTE_PRODUCT } from '../types';
 
 export type ProductCardProps = {
   childrent?: React.ReactElement;
@@ -32,13 +32,7 @@ const ProductCard = (props: ProductCardProps) => {
               <div className='flex flex-row justify-between items-end mt-2 w-full'>
                 <button
                   className='bg-tertiary py-[8px] px-[16px] rounded-[20px] outline-none w-fit text-white font-small shadow-lg hover:shadow-gray-500/50'
-                  onClick={() =>
-                    navigate(ROUTE_PRODUCT_DETAIL, {
-                      state: {
-                        id: 'hel hoaaaaaalo'
-                      }
-                    })
-                  }
+                  onClick={() => navigate(`${ROUTE_PRODUCT}/${props.value?.slug}`)}
                 >
                   Get Ticket
                 </button>

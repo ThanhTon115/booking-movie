@@ -6,4 +6,5 @@ export type RouteType = {
   path: string;
   component: () => React.JSX.Element;
   layout?: () => React.JSX.Element;
+  children?: RouteType[];
 };

@@ -33,7 +33,6 @@ const XCustomedCarousel = (props: XCustomedCarouselType) => {
     const gap =
       (carouselRef.current?.scrollWidth - childWidth * (props.itemCount || 0)) /
       (props.itemCount ? props.itemCount - 1 : 1);
-    console.log(childWidth + gap, childWidth);
     if (defaultTranformValue === childWidth + gap) {
       return;
     }
@@ -53,7 +52,7 @@ const XCustomedCarousel = (props: XCustomedCarouselType) => {
         ref={(val) => {
           carouselRef.current = val;
         }}
-        className='flex flex-row overflow-hidden relative'
+        className={`flex flex-row overflow-hidden relative ${props.className}`}
       >
         <div
           style={{ transform: `translate3d(${tranformValue}px,0,0)` }}

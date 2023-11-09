@@ -10,7 +10,7 @@ const routes: RouteType[] = [
 
   },
   {
-    path: '/:catchAll(.*)*',
+    path: '*',
     component: NotFound,
   }
 ];

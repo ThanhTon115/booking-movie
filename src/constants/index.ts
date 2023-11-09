@@ -27,8 +27,22 @@ const movies: Array<Movie> = [
       'https://m.media-amazon.com/images/M/MV5BYjNjMTUxM2ItOThhZi00ZTMyLWI5NDItNmViOWI0MjJjMjE4XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg',
     basePrice: 1000,
     basePriceDiscount: 0,
-    files: [],
-    premiereAt: new Date()
+    files: [
+      {
+        url: 'https://m.media-amazon.com/images/M/MV5BYjNjMTUxM2ItOThhZi00ZTMyLWI5NDItNmViOWI0MjJjMjE4XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg',
+        mime_type: 'img',
+        name: 'name',
+        size: 2014
+      },
+      {
+        url: 'https://m.media-amazon.com/images/M/MV5BYjNjMTUxM2ItOThhZi00ZTMyLWI5NDItNmViOWI0MjJjMjE4XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg',
+        mime_type: 'img',
+        name: 'name',
+        size: 2014
+      }
+    ],
+    premiereAt: new Date(),
+    slug: 'conan-Cu-dam-sapphire-xanh'
   },
   {
     name: 'Đất rừng phương Nam',
@@ -42,7 +56,8 @@ const movies: Array<Movie> = [
     basePrice: 1000,
     basePriceDiscount: 0,
     files: [],
-    publishedAt: new Date()
+    publishedAt: new Date(),
+    slug: 'dat-rung-phuong-nam'
   },
   {
     name: 'Conan: Tàu ngầm sắt màu đen',
@@ -54,7 +69,8 @@ const movies: Array<Movie> = [
     basePrice: 1000,
     basePriceDiscount: 0,
     files: [],
-    premiereAt: new Date()
+    premiereAt: new Date(),
+    slug: 'conan-con-tau-sac-mau-den'
   }
 ];
 
@@ -128,4 +144,3 @@ const members: Array<Event> = [
 ];
 
 export { movies, events, members };
-1;
