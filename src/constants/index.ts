@@ -1,4 +1,5 @@
-import { Movie } from '../interfaces';
+import { Movie, Review } from '../interfaces';
+import { Actor } from '../interfaces/actor';
 import { Event } from '../interfaces/event';
 
 export const navLinks = [
@@ -42,7 +43,8 @@ const movies: Array<Movie> = [
       }
     ],
     premiereAt: new Date(),
-    slug: 'conan-Cu-dam-sapphire-xanh'
+    slug: 'conan-Cu-dam-sapphire-xanh',
+    typeByAge: 'T13'
   },
   {
     name: 'Đất rừng phương Nam',
@@ -57,7 +59,8 @@ const movies: Array<Movie> = [
     basePriceDiscount: 0,
     files: [],
     publishedAt: new Date(),
-    slug: 'dat-rung-phuong-nam'
+    slug: 'dat-rung-phuong-nam',
+    typeByAge: 'T13'
   },
   {
     name: 'Conan: Tàu ngầm sắt màu đen',
@@ -70,7 +73,8 @@ const movies: Array<Movie> = [
     basePriceDiscount: 0,
     files: [],
     premiereAt: new Date(),
-    slug: 'conan-con-tau-sac-mau-den'
+    slug: 'conan-con-tau-sac-mau-den',
+    typeByAge: 'T13'
   }
 ];
 
@@ -143,4 +147,42 @@ const members: Array<Event> = [
   }
 ];
 
-export { movies, events, members };
+const actors: Array<Actor> = [
+  {
+    name: 'hary',
+    gender: false,
+    dob: new Date(),
+    avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtaZ1yfHlUF7cmsxqWX_yNfov6QrBFNX2cTg&usqp=CAU'
+  },
+  {
+    name: 'taylor',
+    gender: true,
+    dob: new Date(),
+    avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxh0hnQUWexpsNrefdiljy1Uqb7rtG4bCv9g&usqp=CAU'
+  }
+];
+
+const reviews: Array<Review> = [
+  {
+    content: 'hellooo',
+    rating: 4.3,
+    createdUser: {
+      name: 'aly',
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxh0hnQUWexpsNrefdiljy1Uqb7rtG4bCv9g&usqp=CAU',
+      gender: true
+    },
+    createdAt: new Date()
+  },
+  {
+    content: 'hellooo ãi no mo tooo',
+    rating: 4.3,
+    createdUser: {
+      name: 'aly Hoàng Hà',
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxh0hnQUWexpsNrefdiljy1Uqb7rtG4bCv9g&usqp=CAU',
+      gender: false
+    },
+    createdAt: new Date()
+  }
+];
+
+export { movies, events, members, actors, reviews };

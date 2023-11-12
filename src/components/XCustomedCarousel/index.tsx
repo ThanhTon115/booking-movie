@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { IntrinsicAttributes } from '../../shared/types';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { debounce } from 'lodash';
 import './styles.scss';
 
 export type XCustomedCarouselType = IntrinsicAttributes & {
@@ -39,10 +40,13 @@ const XCustomedCarousel = (props: XCustomedCarouselType) => {
     setDefaultTranformValue(childWidth + gap);
   };
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      refreshDefaultTranform();
-      refreshOverflow();
-    });
+    window.addEventListener(
+      'resize',
+      debounce(() => {
+        refreshDefaultTranform();
+        refreshOverflow();
+      }, 300)
+    );
     refreshOverflow();
     refreshDefaultTranform();
   }, []);
@@ -70,23 +74,22 @@ const XCustomedCarousel = (props: XCustomedCarouselType) => {
                 }}
               >
                 <LeftOutlined
-                  className='btn-carousel-direction btn-carousel-direction--left cursor-pointer float-left ml2 hover:!text-[32px] transition-all'
-                  style={{ fontSize: '24px', marginTop: `${Math.round(carouselRef.current?.clientHeight / 2) - 32}px` }}
+                  className='btn-carousel-direction btn-carousel-direction--left cursor-pointer float-left ml-2 transition-all'
+                  style={{ marginTop: `${Math.round(carouselRef.current?.clientHeight / 2) - 32}px` }}
                 />
               </div>
             )}
             {props.itemCount &&
               activeItem < props.itemCount - 1 &&
-              carouselRef.current?.scrollWidth + tranformValue > carouselRef.current?.clientWidth && (
+              (props.itemCount - activeItem) * defaultTranformValue > carouselRef.current?.clientWidth && (
                 <div
                   onClick={() => {
                     handleNext(true);
                   }}
                 >
                   <RightOutlined
-                    className='btn-carousel-direction btn-carousel-direction--right cursor-pointer float-right mr2 hover:!text-[32px] transition-all'
+                    className='btn-carousel-direction btn-carousel-direction--right cursor-pointer float-right mr-2 transition-all'
                     style={{
-                      fontSize: '24px',
                       marginTop: `${Math.round(carouselRef.current?.clientHeight / 2) - 32}px`
                     }}
                   />
