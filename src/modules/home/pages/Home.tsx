@@ -7,6 +7,7 @@ import { events, movies } from '../../../constants';
 import ReactTyped from 'react-typed';
 import ComingSoon from '../components/ComingSoon';
 import Events from '../components/Events';
+import XCustomedCarousel from '../../../components/XCustomedCarousel';
 
 const Home = () => {
   const { t } = useTranslation();

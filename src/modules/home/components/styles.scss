@@ -26,18 +26,4 @@
     width: fit-content;
     border-radius: 56px;
   }
-  .x-switch {
-    &__option {
-      &__label {
-        border: 1px solid #7d78ff;
-        padding: 16px 24px;
-        border-radius: 56px;
-      }
-      .active {
-        background: linear-gradient(169deg, #5560ff 0%, #ff4343 100%);
-        border: none;
-
-      }
-    }
-  }
 }

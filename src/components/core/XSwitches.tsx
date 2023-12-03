@@ -9,6 +9,7 @@ export type XSwitcheType = {
   options?: SwitchOptionType[];
   className?: string;
   optionClassName?: string;
+  labelClassName?: string;
   labelSize?: string;
   optionLabel?: (val?: SwitchOptionType) => string;
   optionValue?: (val?: SwitchOptionType) => string;
@@ -28,7 +29,11 @@ const XSwitches = (props: XSwitcheType) => {
         updateTab(e.value);
       }}
     >
-      <p className={` x-switch__option__label text-${props.labelSize || 'md'} ${tab === e.value ? 'active' : ''}`}>
+      <p
+        className={` ${props.labelClassName} x-switch__option__label text-${props.labelSize || 'md'} ${
+          tab === e.value ? 'active' : ''
+        }`}
+      >
         {typeof props.optionLabel === 'function' ? props.optionLabel(e) : e.label}
       </p>
     </div>

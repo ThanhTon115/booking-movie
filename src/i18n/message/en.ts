@@ -26,6 +26,10 @@ const enMessages = {
     recruitment: 'Recruitment',
     customer_service: 'Customer service',
     view_all: 'View all',
+    get_ticket: 'Get ticket',
+    photos: 'Photos',
+    director_and_actors: 'Director and actors',
+    user_review: 'User review',
     header: {
       about: 'Abouts',
       cinemas: 'Cinemas',

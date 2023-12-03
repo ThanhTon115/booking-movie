@@ -25,7 +25,11 @@ const viMessages = {
     working_hour: 'Giờ làm việc',
     recruitment: 'Tuyển dụng',
     customer_service: 'Chăm sóc khách hàng',
-    view_all: "Xem tất cả",
+    view_all: 'Xem tất cả',
+    get_ticket: 'Mua vé',
+    photos: 'Hình ảnh',
+    director_and_actors: 'Đạo diễn và diễn viên',
+    user_review: 'Đánh giá',
     header: {
       about: 'Giới thiệu',
       cinemas: 'Rạp',
